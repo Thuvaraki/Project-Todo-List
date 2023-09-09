@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&family=Poppins:wght@300&family=Raleway&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #7596ae;
+}
+
+.container{
+    position : relative;
+    width :100%;
+    max-width:500px;
+    /* 
+    width: and max-width: together is a common practice in responsive web design to create 
+    flexible and adaptable layouts that look good on various screen sizes and devices.
+ */
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin: 85px auto 0;
+    padding: 25px;
+}
+
+.container .heading p{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    color: #385fc9;
+}
+
+.container .input-field{
+    position : relative;
+    height : 65px;
+    width :100%;
+}
+
+.input-field textarea{
+    height:100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+       /* When applied to a <textarea> element, resize: none; prevents the user from manually resizing the textarea by dragging 
+    its bottom right corner. This can be useful if you want to maintain a fixed size for the textarea. */
+}
+
+.input-field textarea::placeholder {
+  line-height: 65px;
+  padding-left: 10px;
+}
+
+
+/* targets a <textarea> element that is currently in focus */
+.input-field textarea:focus{
+    border-color: #4070f4;
+}
+
+textarea::-webkit-scrollbar{
+    display:none;
+    /* hiding the scrollbar in text area */
+}
+
+.input-field i{
+    position: absolute;
+    top:50%;
+    right: 15px;
+    transform: translateY(-50%);
+    /* used to vertically move (translate) the element. */
+    pointer-events: none;
+    /* pointer-events: none; on an element makes it non-interactive, so it won't capture clicks or other pointer events. */
+    font-size: 24px;
+    color: #707070;
+}
+
+.input-field textarea:focus i{
+    color: #4070f4;
+}
+
+.container .todoLists{
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.todoLists .list{
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 20px 15px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.todoLists .list input{
+    height: 16px;
+    width:16px;
+    accent-color: #4070f4;
+    pointer-events: none; 
+    min-width: 16px;
+}
+
+.todoLists .list .task{
+    margin: 0 30px 0 15px;
+    word-break: break-all;
+}
+
+.list input:checked ~ .task{
+    text-decoration: line-through;
+}
+
+.todoLists .list i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 24px;
+    color: #707070;
+    padding: 5px;
+    display: none;
+    /* normally the trash icon is not visible */
+    opacity:0.6;
+}
+
+.todoLists .list:hover i{
+    display: inline-flex;
+    /* Trash icon will be visible when the list is hovered */
+}
+
+.container .pending-tasks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.pending-tasks span{
+    color: #333;
+}
+
+.pending-tasks .clear-button{
+    padding: 6px 12px;
+    outline: none;
+    border: none;
+    background: #4070f4;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.clear-button:hover{
+    background-color: #0e4bf1;
+}
+
+@media screen and (max-width: 350px){
+    .container{
+        padding: 25px 15px;
+    }
+}
